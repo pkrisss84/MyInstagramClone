@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         btnSignUp = findViewById(R.id.btnSignUp);
         btnLogIn = findViewById(R.id.btnLogIn);
 
+        if (ParseUser.getCurrentUser() != null){
+            transitionToSocialMediaActivity();
+        }
+
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         if (e == null){
                             Toast.makeText(MainActivity.this, appUser.get("username") +
                                     " is signed up successfully", Toast.LENGTH_SHORT).show();
+                            transitionToSocialMediaActivity();
                         }else{
                             Toast.makeText(MainActivity.this, e.getMessage(),Toast.LENGTH_LONG).show();
                         }
@@ -84,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LogInMain.class);
-                startActivity(intent);
+               Intent intent = new Intent(MainActivity.this, LogInMain.class);
+               startActivity(intent);
             }
         });
     }
@@ -101,5 +106,9 @@ public class MainActivity extends AppCompatActivity {
         }
         }
 
+        public void transitionToSocialMediaActivity(){
+            Intent intent = new Intent(MainActivity.this, SocialMediaActivity.class);
+            startActivity(intent);
+    }
 
 }

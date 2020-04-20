@@ -63,9 +63,7 @@ public class LogInMain extends AppCompatActivity {
                                     if (user != null && e == null) {
                                         Toast.makeText(LogInMain.this, user.get("username")
                                                 + " is logged succesfully", Toast.LENGTH_SHORT).show();
-
-                                        Intent intent = new Intent(LogInMain.this, WelcomeMain.class);
-                                        startActivity(intent);
+                                        transitionToSocialMediaActivity();
 
                                     } else {
                                         Toast.makeText(LogInMain.this, e.getMessage(), Toast.LENGTH_LONG).show();
@@ -100,5 +98,8 @@ public class LogInMain extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
+    public void transitionToSocialMediaActivity(){
+        Intent intent = new Intent(LogInMain.this, SocialMediaActivity.class);
+        startActivity(intent);
+    }
 }
