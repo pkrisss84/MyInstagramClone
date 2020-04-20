@@ -26,6 +26,8 @@ public class LogInMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in_main);
 
+        setTitle("Instagram Clone");
+
         edtUserLogIn = findViewById(R.id.edtUserLogIn);
         edtUserPassword = findViewById(R.id.edtUserPassword);
 

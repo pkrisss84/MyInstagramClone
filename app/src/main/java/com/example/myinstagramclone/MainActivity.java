@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setTitle("Instagram Clone");
         // Save the current Installation to Back4App
         ParseInstallation.getCurrentInstallation().saveInBackground();
 
